@@ -1,0 +1,2 @@
+dlt[bigquery]>=1.17.1
+orchestra-sdk

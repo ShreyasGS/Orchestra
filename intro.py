@@ -8,9 +8,9 @@ def main():
 
     # Initialize the pipeline
     pipeline = dlt.pipeline(
-        pipeline_name="github_pipeline",
+        pipeline_name="github_orchestra_test2",
         destination="bigquery",
-        dataset_name="demo_github",
+        dataset_name="github_orc_data_test2",
         progress="log"
     )
 

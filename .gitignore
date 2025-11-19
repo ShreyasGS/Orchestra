@@ -15,3 +15,5 @@ _local
 # ignore duckdb
 *.duckdb
 *.wal
+service_account.json
+secret_json

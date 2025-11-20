@@ -8,16 +8,20 @@ def run_resource(
     incremental_date: str | None = None,
 ):
     base_source = github_pipeline.github_source
-    selected_source = base_source.with_resources(resource_name)
+    
 
     # Apply incremental ONLY if explicitly passed
     if incremental_date is not None:
-        selected_source.apply_hints(
+        # Dynamically get the resource: base_source.issues, base_source.forks, etc.
+        resource = getattr(base_source, resource_name)
+        resource.apply_hints(
             incremental=dlt.sources.incremental(
                 "updated_at",
                 initial_value=incremental_date,
             )
         )
+
+    selected_source = base_source.with_resources(resource_name)
 
     pipeline = dlt.pipeline(
         pipeline_name=f"github_inc_orc_demo_{resource_name}",

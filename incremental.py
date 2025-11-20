@@ -14,7 +14,7 @@ def run_resource(
     if incremental_date is not None:
         selected_source.apply_hints(
             incremental=dlt.sources.incremental(
-                "created_at",
+                "updated_at",
                 initial_value=incremental_date,
             )
         )

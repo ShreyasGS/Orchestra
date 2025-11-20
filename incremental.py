@@ -20,7 +20,7 @@ def run_resource(
         )
 
     pipeline = dlt.pipeline(
-        pipeline_name=f"github_inc_demo_{resource_name}",
+        pipeline_name=f"github_inc_orc_demo_{resource_name}",
         destination="bigquery",   
         dataset_name="demo_inc_orc_github",
         progress="log",

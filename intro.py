@@ -4,7 +4,7 @@ import github_pipeline
 
 def main():
     # Load the source from your github_pipeline module
-    source = github_pipeline.github_source.with_resources('releases')
+    source = github_pipeline.github_source
 
     # Initialize the pipeline
     pipeline = dlt.pipeline(

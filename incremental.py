@@ -42,6 +42,7 @@ def main():
     a = run_resource("repos")
     b = run_resource("contributors")
     c = run_resource("releases")
+    #incremental only for issues
     d = run_resource("issues", incremental_date=incremental_date)
 
     return a, b, c, d

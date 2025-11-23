@@ -69,12 +69,12 @@ config: RESTAPIConfig = {
 
 github_source = rest_api_source(config)
 
-pipeline = dlt.pipeline(
-        pipeline_name="github_orchestra_test",
-        destination="bigquery",
-        dataset_name="github_orc_data_test",
-        progress="log"  # Add logging as per rule recommendation
-    )
+# pipeline = dlt.pipeline(
+#         pipeline_name="github_orchestra_test",
+#         destination="bigquery",
+#         dataset_name="github_orc_data_test",
+#         progress="log"  # Add logging as per rule recommendation
+#     )
 
-load_info = pipeline.run(github_source)
-print(load_info)
+# load_info = pipeline.run(github_source)
+# print(load_info)
